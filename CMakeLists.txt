@@ -12,6 +12,8 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 
 add_executable(minidb
     src/main.cpp
+    src/storage/page.cpp
+    src/storage/disk_manager.cpp
 )
 
 target_include_directories(minidb
