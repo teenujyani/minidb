@@ -17,6 +17,8 @@ add_executable(minidb
     src/storage/page.cpp
     src/storage/disk_manager.cpp
     src/storage/serializer.cpp
+    src/storage/lru_replacer.cpp
+    src/storage/buffer_pool_manager.cpp
 )
 
 target_include_directories(minidb
@@ -32,6 +34,18 @@ add_executable(serializer_test
 )
 
 target_include_directories(serializer_test
+    PRIVATE
+        ${PROJECT_SOURCE_DIR}/include
+)
+
+# lru_replacer tests
+
+add_executable(lru_replacer_test
+    tests/storage/lru_replacer_test.cpp
+    src/storage/lru_replacer.cpp
+)
+
+target_include_directories(lru_replacer_test
     PRIVATE
         ${PROJECT_SOURCE_DIR}/include
 )
