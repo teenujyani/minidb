@@ -35,7 +35,7 @@ namespace minidb
         {
             return false;
         }
-        std::size_t offset =static_cast<std::size_t>(page_id) * PAGE_SIZE;
+        std::size_t offset = static_cast<std::size_t>(page_id) * PAGE_SIZE;
         // Move read pointer
         db_file_.seekg(offset);
         // Check whether page exists
